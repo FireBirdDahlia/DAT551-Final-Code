@@ -1,0 +1,319 @@
+<!--NOTES
+------------------------------------------------------------------------------------------
+Key Functions of Project:
+    - Use arrow buttons to go the next/previous page.
+    - Use navbar to navigate to a specific page.
+    - Click or Drag the edges of each page to go to the next.
+    - Background music that you can mute/unmute based on your needs (refer to note on the main.js file if BGM doesn't start playing automatically)
+    - Embedded relevant YouTube videos that you can play and change the settings of. 
+----------------------------------------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Dubai - Flipbook</title>
+
+    <!-- Include CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include Turn.js library -->
+    <script type="text/javascript" src="http://www.turnjs.com/lib/turn.min.js"></script>
+
+    <!-- Include FontAwesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Link to custom JS file -->
+    <script src="main.js" defer></script>
+
+</head>
+<body>
+
+<div class="bookContainer">
+
+    <audio id="page-turn-sound" src="/271943-Paper-Notebook-Page_Turn-01.wav" preload="auto"></audio>
+    <audio id="background-music" src="/Arabic Background Music No Copyright, Royalty Free Creative Commons (mp3cut.net) (1).mp3" preload="auto" autoplay loop></audio>
+    <button id="mute-toggle" aria-label="Mute Background Music">🔊 Mute</button>
+    
+
+    <!------------------ Previous Button ------------------>
+    <button id="prev-btn">
+        <i class="fas fa-arrow-circle-left"></i>
+    </button>
+     
+    <!------------------ Flip Book ------------------>
+    <div id="flipbook">
+        
+        <!-- Front Cover -->
+        <div class="page">
+            <img id="front-cover" src="/History of Dubai (7).png" alt="Front Cover" style="width:700px; height: 950px;">
+        </div>
+
+        <!------------ Content Pages ------------>
+        <!-- Introduction -->
+        <div class="page">
+            <h1>Introduction</h1>
+            <p>Dubai is a city known for its futuristic skyline and luxurious lifestyle, but beneath 
+                its modern appearance lies a rich history often overlooked. Beginning as a modest 
+                fishing and pearl-diving village, Dubai's connection to the sea and trade shaped 
+                its early development. Through centuries of cultural exchanges and bold leadership, 
+                it transformed from these humble beginnings into a global hub for commerce and tourism,
+                demonstrating how a city can evolve while still preserving its heritage.
+            </p>
+        </div>
+        <div class="page">
+            <img src="https://i.pinimg.com/736x/ea/d2/71/ead271ce7f91d35fd6a1cfa976b61500.jpg" alt="Dubai City" style="width:600px; height:850px;">
+
+        </div>
+
+        <!-- Origins of Dubai -->
+        <div class="page">
+            <h1>Origins of Dubai</h1>
+        </div>
+        <div class="page">
+            <p>The history of Dubai dates back to the early Minoan era. Formerly, the area that 
+                is Dubai now lies on was a huge mangrove swamp. That swamp had dried out and was 
+                inhabited by 3000 BCE. The first people to dwell in the region are said to have been 
+                nomadic cattle herders during the Bronze Age.
+            </p>
+            <hr>
+            <p>It wasn't until 2500 BCE that they successfully developed a date palm plantation, 
+                marking the earliest instance of agricultural use at the location. The region that 
+                is now called Jumeirah was a caravan station on the trade route that connected Oman 
+                with modern-day Iraq in the fifth century CE.
+            </p>
+            <hr>
+            <p>The main sources of income at the time were fishing, pearl diving, boat building, and
+                housing and feeding traders who came through to sell textiles, gold, and spices. Today,
+                the local souks offer them as perfect souvenirs to take back home. 
+            </p>
+        </div>
+
+        <!-- 1833/1894 -->
+        <div class="page">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkMq5z5ythWZwO6H3fpVear0KJrMwkRrW9wQ&s" alt="The Bani Yas Tribe settle in the Shindagha Peninsula, at the mouth of Dubai Creek." style="width: 600px; height: 500px;">
+        </div>
+        <div class="page">
+            <h1>1833</h1>
+            <p>1833 was a milestone year in Dubai’s history, when Maktoum bin Butti of the Bani Yas 
+                tribe led his people to the Shindagha Peninsula at the mouth of Dubai Creek. He settled
+                 there and declared the town's independence. From that point on, Dubai was recognized as 
+                an independent settlement, but still essentially a fishing community.
+            </p>
+            <h1>1894</h1>
+            <p>Dubai started to prosper greatly under the Al Maktoum leadership. Due to the ideal business 
+                conditions, many foreign workers, particularly those from Pakistan and India, were drawn to
+                the city in 1894 when new laws exempting expatriates from paying taxes were introduced.
+            </p>
+        </div>
+
+        <!-- 1960 -->
+        <div class="page">
+            <h1>1960</h1>
+            <p>The former ruler of Dubai, Sheikh Rashid bin Saeed Al Maktoum, led the majority of the 
+                transformation of the city from this point on. Under his vision for a great city, 
+                the construction for Dubai International Airport (DXB Airport) began. Sheikh Rashid
+                carried out his grand plan later that year, building the Dubai Creek to allow trading 
+                ships to sail in.
+            </p>
+        </div>
+        <div class="page">
+            <img src="https://image.khaleejtimes.com/?uuid=96953d6a-c2d3-439c-bdc0-7423d40823b7&function=cropresize&type=preview&source=false&q=75&crop_w=0.99999&crop_h=0.9012&x=0&y=0&width=780&height=439" alt="Dubai International Airport 1960" style="width: 600px; height: 500px;">
+        </div>
+
+        <!-- 1966 -->
+        <div class="page">
+            <img src="https://www.dubaiasitusedtobe.net/images/FatahDrilling.jpg" alt="Dubai's discovers oil in 1966" style="width: 600px; height: 550px;">
+        </div>
+        <div class="page">
+            <h1>1966</h1>
+            <p>It was in 1966 when Dubai hit a jackpot — they found oil. Though the discovery 
+                jumpstarted incredible projects, the oil reserves were thought to be rather small 
+                by Middle Eastern standards at the time. The limited resource was still, however, 
+                considered a blessing for the city. Rather than viewing oil as a limitless source of 
+                income, Sheikh Rashid began investing the profits into urban development. His goal was 
+                to build a city whose economy would not be reliant on oil.
+            </p>
+        </div>
+
+        <!-- 1979/1985 -->
+        <div class="page">
+            <h1>1979</h1>
+            <p><img src="https://images.skyscrapercenter.com/building/wtcdubai_overall_mg.jpg" alt="Dubai World Trade Centre Building" style="float: right; width: 340px; height: 550px;">A regional financial hub was established with the construction of the World Trade Centre. 
+                At 39 stories and 149 meters high, it was the tallest building in Dubai at the time and 
+                served as a gathering place for people from neighboring countries to engage in business 
+                and trade. 
+            </p>
+        </div>
+        <div class="page">
+            <h1>1985</h1>
+            <p><img src="https://live.staticflickr.com/6067/6096070058_f740ab4050_b.jpg" alt="Emirates Plane" style="float: right; width: 340px; height: 550px;">Emirates Airlines, currently the third-largest airline in the world, was founded in 1985, 
+                known for its premium flying experience and unique red and beige uniform. Emirates Airline 
+                is undoubtedly the most popular option for visitors and one of Dubai’s most important 
+                reputation boosters. 
+            </p>
+        </div>
+
+        <!-- 1994/2001 -->
+        <div class="page">
+            <h1>1994</h1>
+            <p><img src="https://upload.wikimedia.org/wikipedia/en/2/2a/Burj_Al_Arab%2C_Dubai%2C_by_Joi_Ito_Dec2007.jpg" alt="The Burj Al Arab Building" style="float: right; width: 340px; height: 550px;">The opening of the Burj Al Arab commemorated Dubai’s status as the home of one of the 
+                tallest hotels in the world. The hotel is accessible through a bridge and is situated 
+                on a man-made island. Burj Al Arab’s well-known helipad has been used for several 
+                record-breaking sporting events. It was once used as a race car track, a boxing ring,
+                and a tennis court.
+            </p>
+        </div>
+        <div class="page">
+            <h1>2001</h1>
+            <p>Construction on the much-anticipated archipelago of man-made islands, the Palm Jumeirah 
+                project, started in the summer of 2001, and the first residential buildings were put up
+                for public sale by 2006. The Palm Jumeirah is part of the Palm Islands, a huge land 
+                reclamation project which includes the Palm Deira and the Palm Jebel Ali archipelagos.
+            </p>
+            <hr>
+            <p>The crescent-shaped backwater of the Palm was the first area built to protect the 
+                inner island structures from powerful sea currents. The project came with a hefty 
+                price tag of $12 billion once it was finished.
+            </p>
+            <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/12/6e/16/01.jpg" alt="The Palm Jumeirah Islands" style="width: 420px; height: 250px;">
+
+        </div>
+
+        <!-- 2005/2009 -->
+        <div class="page">
+            <h1>2005</h1>
+            <p>The Dubai Ports World, or better known as DP World, was established in 2005 and acted 
+                as a crucial link to the economic supply chain, handling approximately 10% of world 
+                trade through the interconnected global network of ports and terminals.
+            </p>
+            <img src="https://more.bham.ac.uk/port-infrastructure/wp-content/uploads/sites/61/2022/01/Dubai-port.jpg" alt="Dubai Ports World" style="width: 600px; height: 400px;">
+        </div>
+        <div class="page">
+            <img src="https://thenational-the-national-prod.cdn.arcpublishing.com/resizer/v2/5JYIIDFMKBE3ZNSNMOJ6RUFGHM?smart=true&auth=e84c02e36e0f3f9331c6502a68dce799c2211e666702b5d5bb3495f6d53daf79&width=400&height=225" alt="Dubai Metro opens in 2009" style="width: 600px; height: 400px;">
+            <h1>2009</h1>
+            <p>The Dubai Metro is one of the most advanced railway systems in the world. It is a 
+                fully automated and driverless collection of trains that travel across 53 stations
+                along the length of the city.
+            </p>
+            <hr>
+            <p>The Dubai Metro travels a total distance of 75 kilometers, or 46 miles, overall. 
+                Additionally, the Dubai Metro links to eleven tram stops, making it easy for locals 
+                and tourists to get throughout the entire city.
+            </p>
+        </div>
+
+        <!-- 2010 -->
+        <div class="page">
+            <h1>2010</h1>
+            <p>The record-breaking Burj Khalifa opened its doors to the public in January of 
+                2010 and became a huge landmark in the city. With a height of 828-meters, the Burj 
+                Khalifa became known as the world’s tallest skyscraper, estimating to have cost 
+                $1.5 billion in total to build. In the same year, Dubai constructed a second airport 
+                to accommodate the steadily increasing number of visitors. The airport, named Al 
+                Maktoum International Airport after the ruler of Dubai, is located near Jebel Ali. 
+                Costing an astounding amount of $82 billion, the airport accommodates more than 90 
+                million visitors each year. 
+            </p>
+        </div>
+        <div class="page">
+            <h2>Timelapse of the Construction of the Burj Khalifa</h2>
+            <iframe width="600" height="600" src="https://www.youtube.com/embed/zSF7ig24gsw?si=ZJKdeo6zt6B8Vk5z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p>[TW: Flashing due to sped up timelapse]</p>
+        </div>
+
+        <!-- 2022 -->
+        <div class="page">
+            <img src="https://gw-assets.assaabloy.com/is/image/assaabloy/MOTF%20(Outer%20Pic)-1" alt="Museum of the Future" style="width: 600px; height: 550px;">
+        </div>
+        <div class="page">
+            <h1>2022</h1>
+            <p>Listed by National Geographic in 2022 as one of the world's 14 most beautiful museums, 
+                the Museum of the Future is an architectural and engineering masterpiece that showcases 
+                innovative and futuristic technologies.
+            </p>
+        </div>
+
+        <!-- Dubai Timelapse -->
+        <div class="page">
+            <h1>Timelapse of Dubai's Development in 20 Years</h1>
+        </div>
+        <div class="page">
+            <iframe width="600" height="850" src="https://www.youtube.com/embed/PIWprEfhxio?si=D08rC--wrnKfZyG1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- Future Plans -->
+        <div class="page">
+            <h1>Future Plans</h1>
+        </div>
+        <div class="page">
+            <h2>Dubai Economic Agenda</h2>
+            <p>By 2033, the Dubai Economic Agenda seeks to double Dubai's GDP and solidify its place 
+                among the world's top three cities. With goals to boost international commerce to 
+                AED 25.6 trillion and add 400 cities as important commercial partners over the next 
+                ten years, it consists of 100 transformative projects.
+            </p>
+            <h2>Dubai 2040 Urban Master Plan</h2>
+            <p>The Dubai 2040 Urban Master Plan combines the emirate's development plans with its 
+                economic priorities. The plan will double green spaces by 2040, with nature reserves 
+                covering 60% of total land area. Green corridors will connect residential, service, 
+                and work areas, promoting eco-friendly transportation options like cycling and walking.
+            </p>
+            <h2>Dubai Clean Energy Strategy</h2>
+            <p>Launched in 2015, the Dubai Clean Energy Strategy aims to generate 75% of Dubai's energy 
+                from clean sources by 2050. The plan focuses on making Dubai a green economy hub 
+                through five pillars: infrastructure, regulation, funding, capability development, 
+                and sustainable energy mix.
+            </p>
+        </div>
+
+        <!------------ Back Cover with Filler Page ------------>
+        <!-- Filler Page -->
+        <div class="page">
+            <h3>"In the desert, the city of Dubai is a beacon of progress, where the impossible becomes possible." – Unknown</h3>
+        </div>
+
+        <!-- Back Cover -->
+        <div class="page">
+            <h3>"Dubai will never settle for anything less than first place." - Mohammed Bin Rashid Al Maktoum</h3>
+        </div>
+    </div>
+
+    <!------------------ Next Button ------------------>
+    <button id="next-btn">
+        <i class="fas fa-arrow-circle-right"></i>
+    </button>
+
+
+</div>
+
+<div class="NavContainer">
+    
+        <!------------------ Navigation Bar ------------------>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#" id="front-page" data-page="1">Front Cover</a></li>
+                <li><a href="#" data-page="2">Introduction</a></li>
+                <li><a href="#" data-page="3">Origins of Dubai</a></li>
+                <li><a href="#" data-page="4">1833-1894</a></li>
+                <li><a href="#" data-page="5">1960</a></li>
+                <li><a href="#" data-page="6">1966</a></li>
+                <li><a href="#" data-page="7">1979-1985</a></li>
+                <li><a href="#" data-page="8">1994-2001</a></li>
+                <li><a href="#" data-page="9">2005-2009</a></li>
+                <li><a href="#" data-page="10">2010</a></li>
+                <li><a href="#" data-page="11">2022</a></li>
+                <li><a href="#" data-page="12">Dubai Timelapse</a></li>
+                <li><a href="#" data-page="13">Future Plans</a></li>
+                <li><a href="#" id="back-cover">Back Cover</a></li>
+    
+            </ul>
+        </nav>
+    </div>
+</body>
+
+</html>
